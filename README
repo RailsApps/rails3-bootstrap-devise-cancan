@@ -1,7 +1,25 @@
-Rails3 Bootstrap Devise Cancan
-========================
+Rails3 + Twitter Bootstrap + Devise + CanCan
+============================================
 
+You can use this project as a starting point for a Rails web application. It requires Rails 3 and uses Devise for user management and authentication, CanCan for authorization of administrator access, and Twitter Bootstrap for CSS styling.
+
+Devise
+http://github.com/plataformatec/devise
+
+CanCan
+https://github.com/ryanb/cancan
+
+Twitter Bootstrap
+http://twitter.github.com/bootstrap/
 
 ________________________
 
-License
+For more information, please see the updated README file on GitHub:
+
+https://github.com/railsapps/rails3-bootstrap-devise-cancan
+
+________________________
+
+Public Domain Dedication
+
+This work is a compilation and derivation from other previously released works. With the exception of various included works, which may be restricted by other licenses, the author or authors of this code dedicate any and all copyright interest in this code to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this code under copyright law.
