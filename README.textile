@@ -105,7 +105,7 @@ To reproduce the example application exactly as found in the repository, make th
 ## Devise with default modules *#2*
 ## Devise with Confirmable module
 ## Devise with Confirmable and Invitable modules
-* Would you like to manage authorization with CanCan & Rolify? *yes*
+* Would you like to manage authorization with "CanCan":https://github.com/ryanb/cancan & "Rolify":https://github.com/EppO/rolify? *yes*
 * Which front-end framework would you like for HTML5 and CSS3?
 ## None *#4*
 ## "Zurb Foundation":http://foundation.zurb.com/
