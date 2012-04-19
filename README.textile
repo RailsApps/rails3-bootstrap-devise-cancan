@@ -100,21 +100,21 @@ To reproduce the example application exactly as found in the repository, make th
 * Would you like to use "Cucumber":http://cukes.info/ for your BDD? *yes*
 * Would you like to use "Guard":http://intridea.com/posts/hire-a-guard-for-your-project to automate your workflow? *no*
 * Would you like the app to use a Gmail account to send email? *yes*
-* Would you like to use "Devise":http://github.com/plataformatec/devise for authentication?
+* Would you like to use "Devise":http://github.com/plataformatec/devise for authentication? *#2*
 ## No
-## Devise with default modules *#2*
+## Devise with default modules
 ## Devise with Confirmable module
 ## Devise with Confirmable and Invitable modules
 * Would you like to manage authorization with "CanCan":https://github.com/ryanb/cancan & "Rolify":https://github.com/EppO/rolify? *yes*
-* Which front-end framework would you like for HTML5 and CSS3?
-## None *#4*
+* Which front-end framework would you like for HTML5 and CSS3? *#4*
+## None
 ## "Zurb Foundation":http://foundation.zurb.com/
 ## "Twitter Bootstrap":http://twitter.github.com/bootstrap/ (less)
 ## "Twitter Bootstrap":http://twitter.github.com/bootstrap/ (sass)
 ## "Skeleton":http://www.getskeleton.com/
 ## Normalize CSS for consistent styling
-* Which form gem would you like?
-## None *#1*
+* Which form gem would you like? *#1*
+## None
 ## simple form
 ## simple form (bootstrap)
 * Would you like to use "rails-footnotes":https://github.com/josevalim/rails-footnotes during development? *no*
