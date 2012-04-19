@@ -10,7 +10,7 @@ Best of all, there's a "detailed tutorial":http://railsapps.github.com/tutorial-
 
 You can clone this app or generate a new Rails application using this app as a template.
 
-!-http://railsapps.github.com/images/rails3-bootstrap-devise-cancan.png(Rails Application for Devise with CanCan and Twitter Bootstrap)!
+!http://railsapps.github.com/images/rails3-bootstrap-devise-cancan.png(Rails Application for Devise with CanCan and Twitter Bootstrap)!
 
 h2. !http://twitter-badges.s3.amazonaws.com/t_logo-a.png(Follow on Twitter)!:http://www.twitter.com/rails_apps Follow on Twitter
 
