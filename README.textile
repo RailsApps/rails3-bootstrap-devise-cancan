@@ -8,7 +8,7 @@ Rails 3.2 example application shows how to use "Devise":http://github.com/plataf
 
 Best of all, there's a "detailed tutorial":http://railsapps.github.com/tutorial-rails-bootstrap-devise-cancan.html to show how it's built.
 
-You can clone this app or generate a new Rails application using this app as a template.
+You can clone this app or generate a new Rails application using an "application template":https://github.com/RailsApps/rails3-application-templates.
 
 !http://railsapps.github.com/images/rails3-bootstrap-devise-cancan.png(Rails Application for Devise with CanCan and Twitter Bootstrap)!
 
