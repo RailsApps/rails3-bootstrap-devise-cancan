@@ -1,4 +1,4 @@
-h1. Rails Application for Devise with CanCan and Twitter Bootstrap
+h1. !http://railsapps.github.com/images/rails-36x36.jpg(Rails Application for Devise with CanCan and Twitter Bootstrap)! Rails App for Devise with CanCan and Twitter Bootstrap
 
 Rails 3.2 example application shows how to use "Devise":http://github.com/plataformatec/devise with "CanCan":https://github.com/ryanb/cancan and "Twitter Bootstrap":http://twitter.github.com/bootstrap/. 
 
@@ -16,7 +16,7 @@ h2. !http://twitter-badges.s3.amazonaws.com/t_logo-a.png(Follow on Twitter)!:htt
 
 Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps. Please tweet some praise if you like what you've found.
 
-h2. !http://railsapps.github.com/images/rails-36x36.jpg(Tutorial)! Tutorial
+h2. Tutorial
 
 A complete walkthrough tutorial is available on the GitHub wiki:
 
@@ -34,13 +34,13 @@ The @rake db:seed@ command sets up a database with two example users. The first 
 
 h4. Similar Examples and Tutorials
 
+This is one in a series of Rails example apps and tutorials from the "RailsApps Project":http://railsapps.github.com/. See a list of additional "Rails examples, tutorials, and starter apps":http://railsapps.github.com/rails-examples-tutorials.html.
+
 This example application is based on the "rails3-devise-rspec-cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber example and tutorial and adds "CanCan":https://github.com/ryanb/cancan and "Twitter Bootstrap":http://twitter.github.com/bootstrap/. View the "rails3-devise-rspec-cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber example and tutorial for the basics of setting up an application with "RSpec":http://rspec.info/ and "Cucumber":http://cukes.info/.
 
 This example application uses ActiveRecord and a SQLite database. You can use the Mongoid ORM with the MongoDB datastore instead, for faster development without schemas or migrations. The "rails3-mongoid-devise":https://github.com/RailsApps/rails3-mongoid-devise example app and tutorial shows how to set up Devise and Mongoid with RSpec and Cucumber.
 
 To see a more complex application that uses Devise, CanCan, and Twitter Bootstrap, see the "rails-prelaunch-signup":https://github.com/RailsApps/rails-prelaunch-signup example and tutorial from the RailsApps project.
-
-See an expanded list of similar "Rails examples, tutorials, and starter apps":http://railsapps.github.com/rails-examples-tutorials.html.
 
 h2. Dependencies
 
