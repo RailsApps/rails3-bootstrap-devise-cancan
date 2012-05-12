@@ -120,6 +120,7 @@ To reproduce the example application exactly as found in the repository, make th
 * Would you like to use "rails-footnotes":https://github.com/josevalim/rails-footnotes during development? *no*
 * Would you like to set a robots.txt file to ban spiders? *yes*
 * Would you like to add 'will_paginate' for pagination? *no*
+* Add 'therubyracer' JavaScript runtime (for Linux users without node.js)? *no*
 
 You can choose other selections if you don't care about matching the example application exactly.
 
