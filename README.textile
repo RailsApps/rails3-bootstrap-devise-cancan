@@ -189,8 +189,6 @@ user.add_role :admin
 
 Use the defaults or change the values for name, email, and password as you wish.
 
-If you've generated the application with the option to install the Devise @:confirmable@ module, there will be an extra attribute @confirmed_at => Time.now@ for creation of a user.
-
 h3. Set the Database
 
 Prepare the database and add the default user to the database by running the commands:
@@ -268,7 +266,7 @@ Are you getting an error "OpenSSL certificate verify failed" when you try to gen
 
 h2. Documentation
 
-This is the only documentation.
+The "tutorial":http://railsapps.github.com/tutorial-rails-bootstrap-devise-cancan.html provides additional documentation.
 
 For a Devise introduction, Ryan Bates offers a "Railscast on Devise":http://railscasts.com/episodes/209-introducing-devise. You can find documentation for "Devise":http://github.com/plataformatec/devise at "http://github.com/plataformatec/devise":http://github.com/plataformatec/devise. There is an active "Devise mailing list":http://groups.google.com/group/plataformatec-devise and you can submit "Devise issues":http://github.com/plataformatec/devise/issues at GitHub.
 
