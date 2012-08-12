@@ -8,7 +8,7 @@ Rails 3.2 example application shows how to use "Devise":http://github.com/plataf
 
 Best of all, there's a "detailed tutorial":http://railsapps.github.com/tutorial-rails-bootstrap-devise-cancan.html to show how it's built.
 
-You can clone this app or generate a new Rails application using an "application template":https://github.com/RailsApps/rails3-application-templates.
+You can build this application in only a few minutes using the "Rails Composer":http://railsapps.github.com/rails-composer/ tool.
 
 !http://railsapps.github.com/images/rails3-bootstrap-devise-cancan.png(Rails Application for Devise with CanCan and Twitter Bootstrap)!
 
@@ -18,13 +18,11 @@ Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps. Plea
 
 h2. Tutorial
 
-A complete walkthrough tutorial is available on the GitHub wiki:
+A complete tutorial is available:
 
 h4. "View the Tutorial":http://railsapps.github.com/tutorial-rails-bootstrap-devise-cancan.html
 
 The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. See a list of recommended resources for "Rails":http://railsapps.github.com/rails.html.
-
-If you simply wish to modify the application for your own project, you can download the application and set it up as described below, without following the tutorial.
 
 h2. What Is Implemented -- and What Is Not
 
@@ -32,7 +30,7 @@ This is a demonstration application that allows you to visit a home page and see
 
 The @rake db:seed@ command sets up a database with two example users. The first user is designated as an administrator and can view a administrative page when logged in. The second user is restricted from accessing the administrative page.
 
-h4. Similar Examples and Tutorials
+h3. Similar Examples and Tutorials
 
 This is one in a series of Rails example apps and tutorials from the "RailsApps Project":http://railsapps.github.com/. See a list of additional "Rails examples, tutorials, and starter apps":http://railsapps.github.com/rails-examples-tutorials.html.
 
@@ -49,38 +47,34 @@ Before generating your application, you will need:
 * The Ruby language (version 1.9.3)
 * Rails 3.2
 
-Be sure to see "Installing Rails 3.2":http://railsapps.github.com/installing-rails.html for detailed instructions and advice.
+See the article "Installing Rails":http://railsapps.github.com/installing-rails.html for advice about updating Rails and your development environment.
 
 h2. Getting the Application
 
-You have several options for getting the code.
+You have several options for getting the code. You can _fork_, _clone_, or _generate_.
 
-h4. Fork, Clone, or Generate?
+h3. Fork
 
-_Fork:_ If you'd like to add features (or bug fixes) to improve the example application, you can fork the GitHub repo and "make pull requests":http://help.github.com/send-pull-requests/. Your code contributions are welcome!
+If you'd like to add features (or bug fixes) to improve the example application, you can fork the GitHub repo and "make pull requests":http://help.github.com/send-pull-requests/. Your code contributions are welcome!
 
-_Clone:_ If you want to copy and customize the app with changes that are only useful for your own project, you can clone the GitHub repo. You'll need to search-and-replace the project name throughout the application. You probably should generate the app instead (see below).
+h3. Clone
 
-_Generate:_ If you want to use the project as a starter app for your customized application, use the application template to generate a new version of the example app. You'll be able to give it your own project name when you generate the app. Generating the application (described below) gives you many options, such as using Haml for views, additional Devise modules, and other popular gems such as will-paginate.
-
-h4. Clone the Repository
-
-If you simply wish to examine the example code, you can download the code ("clone the repository") with the command
+If you want to copy and customize the app with changes that are only useful for your own project, you can clone the GitHub repo. You'll need to search-and-replace the project name throughout the application. You probably should generate the app instead (see below). To clone:
 
 <pre>
 $ git clone git://github.com/RailsApps/rails3-bootstrap-devise-cancan.git
 </pre>
   
-The source code is managed with Git (a version control system). You'll need Git on your machine (install it from "http://git-scm.com/":http://git-scm.com/).
+You'll need "git":http://git-scm.com/ on your machine. See "Rails and Git":http://railsapps.github.com/rails-git.html.
 
-h4. Using the Ready-Made Application Template
+h3. Generate
 
-You can use an application template to generate a new version of the example app. You’ll find an application template for this app in the "Rails Application Templates":https://github.com/RailsApps/rails3-application-templates repository.
+If you want to use the project as a starter app, use the "Rails Composer":http://railsapps.github.com/rails-composer/ tool to generate a new version of the example app. You'll be able to give it your own project name when you generate the app. Generating the application gives you many additional options.
 
-To build the "rails3-bootstrap-devise-cancan" example application, run the command:
+To build the example application, run the command:
 
 <pre>
-$ rails new myapp -m https://github.com/RailsApps/rails3-application-templates/raw/master/rails3-bootstrap-devise-cancan-template.rb -T
+$ rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T
 </pre>
 
 Use the @-T@ flag to skip Test::Unit files.
@@ -89,87 +83,39 @@ The @$@ character indicates a shell prompt; don't include it when you run the co
 
 This creates a new Rails app (with the name @myapp@) on your computer.
 
-The application generator templates will ask you for various preferences.
+h3. Edit the README
 
-To reproduce the example application exactly as found in the repository, make the following selections:
-
-* Would you like to use "Haml":http://en.wikipedia.org/wiki/Haml instead of ERB? *no*
-* Would you like to use "RSpec":http://rspec.info/ instead of TestUnit? *yes*
-* Would you like to use "factory_girl":https://github.com/thoughtbot/factory_girl for test fixtures with RSpec? *yes*
-* Would you like to use "machinist":https://github.com/notahat/machinist for test fixtures with RSpec? *no*
-* Would you like to use "Cucumber":http://cukes.info/ for your BDD? *yes*
-* Would you like to use "Guard":http://intridea.com/posts/hire-a-guard-for-your-project to automate your workflow? *no*
-* Would you like the app to use a Gmail account to send email? *yes*
-* Would you like to use "Devise":http://github.com/plataformatec/devise for authentication? *#2*
-## No
-## Devise with default modules
-## Devise with Confirmable module
-## Devise with Confirmable and Invitable modules
-* Would you like to manage authorization with "CanCan":https://github.com/ryanb/cancan & "Rolify":https://github.com/EppO/rolify? *yes*
-* Which front-end framework would you like for HTML5 and CSS3? *#4*
-## None
-## "Zurb Foundation":http://foundation.zurb.com/
-## "Twitter Bootstrap":http://twitter.github.com/bootstrap/ (less)
-## "Twitter Bootstrap":http://twitter.github.com/bootstrap/ (sass)
-## "Skeleton":http://www.getskeleton.com/
-## Normalize CSS for consistent styling
-* Which form gem would you like? *#1*
-## None
-## simple form
-## simple form (bootstrap)
-* Would you like to use "rails-footnotes":https://github.com/josevalim/rails-footnotes during development? *no*
-* Would you like to set a robots.txt file to ban spiders? *yes*
-* Would you like to add 'will_paginate' for pagination? *no*
-* Add 'therubyracer' JavaScript runtime (for Linux users without node.js)? *no*
-
-You can choose other selections if you don't care about matching the example application exactly.
-
-h4. Use "Recipes" to Customize an Application Template
-
-The application template was created using the "rails_apps_composer":https://github.com/RailsApps/rails_apps_composer gem which provides a convenient way to assemble a reusable application template by selecting various "recipes" for popular Rails development packages. Use "rails_apps_composer":https://github.com/RailsApps/rails_apps_composer if you want to customize the application template for your own starter apps.
-
-h4. Edit the README
-
-If you're open sourcing the app on GitHub, please edit the README file to add a description of the app and your contact info. Changing the README is important if you're using a clone of the example app. I've been mistaken (and contacted) as the author of apps that are copied from my example.
+If you're storing the app in a GitHub repository, please edit the README file to add a description of the app and your contact info. If you don't change the README, people will think I am the author of your version of the application.
 
 h2. Getting Started
 
-h4. About Required Gems
+h3. Install the Required Gems
 
-The application uses the following gems:
+Check the Gemfile to see which gems are used by this application.
 
-* "rails":http://rubygems.org/gems/rails
-* "rspec-rails":http://rubygems.org/gems/rspec-rails
-* "database_cleaner":http://rubygems.org/gems/database_cleaner
-* "factory_girl_rails":http://rubygems.org/gems/factory_girl_rails
-* "cucumber-rails":http://rubygems.org/gems/cucumber-rails
-* "capybara":http://rubygems.org/gems/capybara
-* "devise":http://rubygems.org/gems/devise
-* "cancan":http://rubygems.org/gems/cancan
-* "rolify":http://rubygems.org/gems/rolify
-* "bootstrap-sass":http://rubygems.org/gems/bootstrap-sass
+If you used the "Rails Composer":http://railsapps.github.com/rails-composer/ tool to generate the example app, the application template script has already run the @bundle install@ command.
 
-See "Example Gemfiles for Rails 3.2":http://railsapps.github.com/rails-3-2-example-gemfile.html.
+If not, you should run the @bundle install@ command to install the required gems on your computer:
 
-h4. Install the Required Gems
-
-Install the required gems on your computer:
-
-@$ bundle install@
+<pre>
+$ bundle install
+</pre>
 
 You can check which gems are installed on your computer with:
 
-@$ gem list --local@
+<pre>
+$ gem list
+</pre>
 
 Keep in mind that you have installed these gems locally. When you deploy the app to another server, the same gems (and versions) must be available.
 
-h2. Configure Email
+h3. Configure Email
 
-You must configure the app for your email account if you want your application to send email messages, for example, if you've generated the application with the option to install the Devise @:confirmable@ module. 
+You must configure the app for your email account if you want your application to send email messages. 
 
 h4. Use a Gmail account
 
-If you've generated the application with the option to use a Gmail account to send email, you'll need to modify the files *config/environments/development.rb* and *config/environments/production.rb* to include your Gmail username and password.
+You'll need to modify the files *config/environments/development.rb* and *config/environments/production.rb* to include your Gmail username and password.
 
 <pre>
 config.action_mailer.smtp_settings = {
@@ -198,7 +144,7 @@ Open a new shell or restart your terminal application to continue.
 
 h4. Configure ActionMailer
 
-The example application is set to deliver email in both development and production. It will raise delivery errors in development but not production. 
+The example application is set to deliver email in production only. It will raise delivery errors in development but not production. 
 
 In development, @config.action_mailer.default_url_options@ is set for a host at @localhost:3000@ which will enable links in Devise confirmation email messages to work properly. You'll need to change the @config.action_mailer.default_url_options@ host option from @example.com@ to your own domain for the production environment.
 
@@ -220,7 +166,7 @@ You can modify the configuration file for Devise if you want to use something ot
 
 h2. Create a Default User
 
-h4. Set Up a Database Seed File
+h3. Set Up a Database Seed File
 
 You'll want to set up a default user so you can easily log in to test the app. You can modify the file *db/seeds.rb* for your own name, email and password:
 
@@ -237,7 +183,7 @@ Use the defaults or change the values for name, email, and password as you wish.
 
 If you've generated the application with the option to install the Devise @:confirmable@ module, there will be an extra attribute @confirmed_at => Time.now@ for creation of a user.
 
-h4. Set the Database
+h3. Set the Database
 
 Prepare the database and add the default user to the database by running the commands:
 
@@ -302,21 +248,21 @@ h2. Troubleshooting
 
 Problems? Check the "issues":https://github.com/RailsApps/rails3-application-templates/issues.
 
-h4. Problems with  "Certificate Verify Failed"
+h3. Problems with  "Certificate Verify Failed"
 
 Are you getting an error "OpenSSL certificate verify failed" when you try to generate a new Rails app from an application template? See suggestions to resolve the error "Certificate Verify Failed":http://railsapps.github.com/openssl-certificate-verify-failed.html.
 
-h2. Documentation and Support
+h2. Documentation
 
 This is the only documentation.
 
 For a Devise introduction, Ryan Bates offers a "Railscast on Devise":http://railscasts.com/episodes/209-introducing-devise. You can find documentation for "Devise":http://github.com/plataformatec/devise at "http://github.com/plataformatec/devise":http://github.com/plataformatec/devise. There is an active "Devise mailing list":http://groups.google.com/group/plataformatec-devise and you can submit "Devise issues":http://github.com/plataformatec/devise/issues at GitHub.
 
-h4. Issues
+h2. Issues
 
 Please create a "GitHub issue":http://github.com/RailsApps/rails3-bootstrap-devise-cancan/issues if you identify any problems or have suggestions for improvements.
 
-h4. Where to Get Help
+h2. Where to Get Help
 
 Your best source for help with problems is "Stack Overflow":http://stackoverflow.com/questions/tagged/ruby-on-rails-3. Your issue may have been encountered and addressed by others.
 
