@@ -81,11 +81,11 @@ Use the @-T@ flag to skip Test::Unit files.
 
 The @$@ character indicates a shell prompt; don't include it when you run the command.
 
-This creates a new Rails app (with the name @myapp@) on your computer.
+This creates a new Rails app (with the name "myapp") on your computer.
 
 h3. Edit the README
 
-If you're storing the app in a GitHub repository, please edit the README file to add a description of the app and your contact info. If you don't change the README, people will think I am the author of your version of the application.
+If you're storing the app in a GitHub repository, please edit the README files to add a description of the app and your contact info. If you don't change the README, people will think I am the author of your version of the application.
 
 h2. Getting Started
 
@@ -109,13 +109,18 @@ $ gem list
 
 Keep in mind that you have installed these gems locally. When you deploy the app to another server, the same gems (and versions) must be available.
 
+I recommend using "rvm":https://rvm.io/, the Ruby Version Manager, to create a project-specific gemset for the application. See the article "Installing Rails":http://railsapps.github.com/installing-rails.html.
+
 h3. Configure Email
 
 You must configure the app for your email account if you want your application to send email messages. 
 
 h4. Use a Gmail account
 
-You'll need to modify the files *config/environments/development.rb* and *config/environments/production.rb* to include your Gmail username and password.
+You'll need to modify two files to include your Gmail username and password:
+
+* *config/environments/development.rb*
+* *config/environments/production.rb*
 
 <pre>
 config.action_mailer.smtp_settings = {
@@ -148,13 +153,16 @@ The example application is set to deliver email in production only. It will rais
 
 In development, @config.action_mailer.default_url_options@ is set for a host at @localhost:3000@ which will enable links in Devise confirmation email messages to work properly. You'll need to change the @config.action_mailer.default_url_options@ host option from @example.com@ to your own domain for the production environment.
 
-You can change these values as needed in the *config/environments/development.rb* and *config/environments/production.rb* files.
+You can change these values as needed in these two files:
+
+* *config/environments/development.rb*
+* *config/environments/production.rb*
 
 h4. Configure Devise for Email
 
 Complete your email configuration by modifying
 
-*config/initializers/devise.rb*
+* *config/initializers/devise.rb*
 
 and setting the @config.mailer_sender@ option for the return email address for messages that Devise sends from the application.
 
@@ -162,7 +170,7 @@ h2. Configure Devise
 
 You can modify the configuration file for Devise if you want to use something other than the defaults:
 
-*config/initializers/devise.rb*
+* *config/initializers/devise.rb*
 
 h2. Create a Default User
 
@@ -188,19 +196,21 @@ h3. Set the Database
 Prepare the database and add the default user to the database by running the commands:
 
 <pre>
-$ bundle exec rake db:migrate
-$ bundle exec rake db:seed
+$ rake db:migrate
+$ rake db:seed
 </pre>
 
 Set the database for running tests:
 
 <pre>
-$ bundle exec rake db:test:prepare
+$ rake db:test:prepare
 </pre>
+
+If you’re not using "rvm":https://rvm.io/, the Ruby Version Manager, you should preface each rake command with @bundle exec@. You don’t need to use @bundle exec@ if you are using rvm version 1.11.0 or newer.
 
 h2. Test the App
 
-You can check that your app runs properly by entering the command
+You can check that your application runs properly by entering the command:
 
 @$ rails server@
 
@@ -221,6 +231,10 @@ To sign in as the second user, (unless you've changed it) use
 
 The second user will not see the Admin navigation link and will not be able to access the page at
 "http://localhost:3000/users":http://localhost:3000/users.
+
+Stop the server with Control-C.
+
+If you test the app by starting the web server and then leave the server running while you install new gems, you’ll have to restart the server to see any changes. The same is true for changes to configuration files in the config folder. This can be confusing to new Rails developers because you can change files in the app folders without restarting the server. Stop the server each time after testing and you will avoid this issue.
 
 h2. Deploy to Heroku
 
