@@ -74,14 +74,30 @@ If you want to use the project as a starter app, use the "Rails Composer":http:/
 To build the example application, run the command:
 
 <pre>
-$ rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T
+$ rails new rails3-bootstrap-devise-cancan -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T
 </pre>
 
 Use the @-T@ flag to skip Test::Unit files.
 
 The @$@ character indicates a shell prompt; don't include it when you run the command.
 
-This creates a new Rails app (with the name "myapp") on your computer.
+This creates a new Rails app named @rails3-bootstrap-devise-cancan@ on your computer. You can use a different name if you wish.
+
+You'll see a prompt:
+
+<pre>
+question  Install an example application?
+      1)  I want to build my own application
+      2)  rails3-bootstrap-devise-cancan
+      3)  rails3-devise-rspec-cucumber
+      4)  rails3-mongoid-devise
+      5)  rails3-mongoid-omniauth
+      6)  rails3-subdomains
+</pre>
+
+Choose *2) rails3-bootstrap-devise-cancan*.
+
+The application generator template will ask you for additional preferences. 
 
 h3. Edit the README
 
