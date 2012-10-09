@@ -4,5 +4,5 @@ Rails3BootstrapDeviseCancan::Application.routes.draw do
   end
   root :to => "home#index"
   devise_for :users
-  resources :users, :only => [:show, :index]
+  resources :users, :only => [:show, :index, :destroy]
 end
