@@ -17,4 +17,4 @@ puts 'New user created: ' << user.name
 user.add_role :admin
 user2 = User.create! :name => 'Second User', :email => 'user2@example.com', :password => 'please', :password_confirmation => 'please'
 puts 'New user created: ' << user2.name
-user.add_role :VIP
+user2.add_role :VIP
