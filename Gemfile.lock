@@ -189,7 +189,7 @@ DEPENDENCIES
   factory_girl_rails (>= 4.1.0)
   jquery-rails
   launchy (>= 2.1.2)
-  quiet_assets
+  quiet_assets (>= 1.0.1)
   rails (= 3.2.8)
   rolify (>= 3.2.0)
   rspec-rails (>= 2.11.0)
