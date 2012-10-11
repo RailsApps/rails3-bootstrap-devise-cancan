@@ -26,7 +26,7 @@ The tutorial documents each step to follow to create the application. Every step
 
 h2. What Is Implemented -- and What Is Not
 
-This is a demonstration application that allows you to visit a home page and see a list of users. Devise provides user management so a visitor can register with an email address and password and create an account. Devise provides authentication so access to the site can be limited to users who are registered and logged in. CanCan is used for authorization, limiting access to only an administrator for designated pages.
+This is a demonstration application that allows you to visit a home page and see a list of users. Devise provides user management so a visitor can register with an email address and password and create an account. Devise provides authentication so access to the site can be limited to users who are registered and logged in. CanCan is used for authorization, limiting access to only an administrator for designated pages. An administrative dashboard allows the administrator to delete any user or change a user's role.
 
 The @rake db:seed@ command sets up a database with two example users. The first user is designated as an administrator and can view a administrative page when logged in. The second user is restricted from accessing the administrative page.
 
@@ -95,9 +95,61 @@ question  Install an example application?
       6)  rails3-subdomains
 </pre>
 
-Choose *2) rails3-bootstrap-devise-cancan*.
+Choose *rails3-bootstrap-devise-cancan*. The Rails Composer tool may give you other options (other choices may have been added since these notes were written).
 
-The application generator template will ask you for additional preferences. 
+The application generator template will ask you for additional preferences: 
+
+<pre>
+ question  Web server for development?
+       1)  WEBrick (default)
+       2)  Thin
+       3)  Unicorn
+       4)  Puma
+ question  Web server for production?
+       1)  Same as development
+       2)  Thin
+       3)  Unicorn
+       4)  Puma
+ question  Template engine?
+       1)  ERB
+       2)  Haml
+       3)  Slim
+   extras  Set a robots.txt file to ban spiders? (y/n)
+   extras  Create a project-specific rvm gemset and .rvmrc? (y/n)
+   extras  Create a GitHub repository? (y/n)
+</pre>
+
+h4. Web Servers
+
+Use the default WEBrick server for convenience. If you plan to deploy to Heroku, select "thin" as your production webserver.
+
+h4. Template Engine
+
+The example application uses the default "ERB" Rails template engine. Optionally, you can use another template engine, such as Haml or Slim. See instructions for "Haml and Rails":http://railsapps.github.com/rails-haml.html.
+
+h4. Other Choices
+
+Set a robots.txt file to ban spiders if you want to keep your new site out of Google search results.
+
+It is a good idea to use "rvm":https://rvm.io/, the Ruby Version Manager, and create a project-specific rvm gemset and .rvmrc file (not available on Windows). See "Installing Rails":http://railsapps.github.com/installing-rails.html.
+
+If you choose to create a GitHub repository, the generator will prompt you for a GitHub username and password.
+
+h4. Troubleshooting
+
+If you get an error "OpenSSL certificate verify failed" or "Gem::RemoteFetcher::FetchError: SSL_connect" see the article "OpenSSL errors and Rails":http://railsapps.github.com/openssl-certificate-verify-failed.html.
+
+If you get an error like this:
+
+<pre>
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+    composer  Running 'after bundler' callbacks.
+The template [...] could not be loaded.
+Error: You have already activated ..., but your Gemfile requires .... 
+Using bundle exec may solve this.
+</pre>
+
+It's due to conflicting gem versions. See the article "Rails Error: “You have already activated (…)”":http://railsapps.github.com/rails-error-you-have-already-activated.html.
 
 h3. Edit the README
 
@@ -129,81 +181,43 @@ I recommend using "rvm":https://rvm.io/, the Ruby Version Manager, to create a p
 
 h3. Configure Email
 
-You must configure the app for your email account if you want your application to send email messages. 
+This example application doesn't send email messages. However, if you want your application to send email messages (for example, if you plan to install the Devise @:confirmable@ module) you must configure the application for your email account. See the article "Send Email with Rails":http://railsapps.github.com/rails-send-email.html.
 
-h4. Use a Gmail account
-
-You'll need to modify two files to include your Gmail username and password:
-
-* *config/environments/development.rb*
-* *config/environments/production.rb*
-
-<pre>
-config.action_mailer.smtp_settings = {
-  address: "smtp.gmail.com",
-  port: 587,
-  domain: "example.com",
-  authentication: "plain",
-  enable_starttls_auto: true,
-  user_name: ENV["GMAIL_USERNAME"],
-  password: ENV["GMAIL_PASSWORD"]
-}
-</pre>
-
-You can replace @ENV["GMAIL_USERNAME"]@ and @ENV["GMAIL_PASSWORD"]@ with your Gmail username and password. However, committing the file to a public GitHub repository will expose your secret password.
-
-If you're familiar with setting "Unix environment variables":http://en.wikipedia.org/wiki/Environment_variable, it's advisable to leave @config.action_mailer.smtp_settings@ unchanged and set your environment variables in the file that is read when starting an interactive shell (the *~/.bashrc* file for the bash shell). This will keep the password out of your repository.
-
-Are you using a bash shell? Use @echo $SHELL@ to find out. For a bash shell, edit the *~/.bashrc* file and add:
-
-<pre>
-export GMAIL_USERNAME="myname@gmail.com"
-export GMAIL_PASSWORD="secret*"
-</pre>
-
-Open a new shell or restart your terminal application to continue.
-
-h4. Configure ActionMailer
-
-The example application is set to deliver email in production only. It will raise delivery errors in development but not production. 
-
-In development, @config.action_mailer.default_url_options@ is set for a host at @localhost:3000@ which will enable links in Devise confirmation email messages to work properly. You'll need to change the @config.action_mailer.default_url_options@ host option from @example.com@ to your own domain for the production environment.
-
-You can change these values as needed in these two files:
-
-* *config/environments/development.rb*
-* *config/environments/production.rb*
-
-h4. Configure Devise for Email
-
-Complete your email configuration by modifying
-
-* *config/initializers/devise.rb*
-
-and setting the @config.mailer_sender@ option for the return email address for messages that Devise sends from the application.
-
-h2. Configure Devise
+h3. Configure Devise
 
 You can modify the configuration file for Devise if you want to use something other than the defaults:
 
 * *config/initializers/devise.rb*
 
-h2. Create a Default User
+h2. Create Default Users and Roles
 
 h3. Set Up a Database Seed File
 
 You'll want to set up a default user so you can easily log in to test the app. You can modify the file *db/seeds.rb* for your own name, email and password:
 
 <pre>
+puts 'CREATING ROLES'
+Role.create([
+  { :name => 'admin' }, 
+  { :name => 'user' }, 
+  { :name => 'VIP' }
+], :without_protection => true)
 puts 'SETTING UP DEFAULT USER LOGIN'
 user = User.create! :name => 'First User', :email => 'user@example.com', :password => 'please', :password_confirmation => 'please'
 puts 'New user created: ' << user.name
 user2 = User.create! :name => 'Second User', :email => 'user2@example.com', :password => 'please', :password_confirmation => 'please'
 puts 'New user created: ' << user2.name
 user.add_role :admin
+user2.add_role :VIP
 </pre>
 
-Use the defaults or change the values for name, email, and password as you wish.
+You can change the values for name, email, and password as you wish.
+
+If you include your private password in the file, be sure to add the filename to your *.gitignore* file so that your password doesn't become available in your public GitHub repository.
+
+Note that it's not necessary to personalize the *db/seeds.rb* file before you deploy your app. You can deploy the app with an example user and then use the application's "Edit Account" feature to change name, email address, and password after you log in. Use this feature to log in as an administrator and change the user name and password to your own.
+
+The *db/seeds.rb* file is the only place where we create a list of possible roles. There is no other configuration of roles. Any new role can be added to the roles datatable with a statement such @user.add_role :superhero@.
 
 h3. Set the Database
 
@@ -275,10 +289,6 @@ Please send the author a message, create an issue, or submit a pull request if y
 h2. Troubleshooting
 
 Problems? Check the "issues":https://github.com/RailsApps/rails3-application-templates/issues.
-
-h3. Problems with  "Certificate Verify Failed"
-
-Are you getting an error "OpenSSL certificate verify failed" when you try to generate a new Rails app from an application template? See suggestions to resolve the error "Certificate Verify Failed":http://railsapps.github.com/openssl-certificate-verify-failed.html.
 
 h2. Documentation
 
