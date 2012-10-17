@@ -288,7 +288,7 @@ Please send the author a message, create an issue, or submit a pull request if y
 
 h2. Troubleshooting
 
-Problems? Check the "issues":https://github.com/RailsApps/rails3-application-templates/issues.
+Problems? Check the "issues":http://github.com/RailsApps/rails3-bootstrap-devise-cancan/issues.
 
 h2. Documentation
 
