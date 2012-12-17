@@ -292,7 +292,7 @@ If you've used the Rails Composer tool to generate the application, the applicat
 However, if you've cloned the application directly from GitHub, it is crucial that you change the application's secret token before deploying your application in production mode. Otherwise, people could change their session information, and potentially access your SaaS or membership site as a premium user or administrator. Your secret token should be at least 30 characters long and completely random. Edit your *config/initializers/secret_token.rb* file:
 
 <pre>
-RailsStripeMembershipSaas::Application.config.secret_token = '...some really long, random string...'
+Rails3BootstrapDeviseCancan::Application.config.secret_token = '...some really long, random string...'
 </pre>
 
 h2. Test the App
