@@ -1,10 +1,10 @@
 h1. !http://railsapps.github.com/images/rails-36x36.jpg(Rails Application for Devise with CanCan and Twitter Bootstrap)! Rails App for Devise with CanCan and Twitter Bootstrap
 
-Rails 3.2 example application shows how to use "Devise":http://github.com/plataformatec/devise with "CanCan":https://github.com/ryanb/cancan and "Twitter Bootstrap":http://twitter.github.com/bootstrap/. 
+Rails 3.2 example application shows how to use "Devise":http://github.com/plataformatec/devise with "CanCan":https://github.com/ryanb/cancan and "Twitter Bootstrap":http://twitter.github.com/bootstrap/.
 
-* "Devise":http://github.com/plataformatec/devise gives you ready-made authentication and user management. 
-* "CanCan":https://github.com/ryanb/cancan provides authorization for administrator access. 
-* "Twitter Bootstrap":http://twitter.github.com/bootstrap/ is a front-end framework for CSS styling. 
+* "Devise":http://github.com/plataformatec/devise gives you ready-made authentication and user management.
+* "CanCan":https://github.com/ryanb/cancan provides authorization for administrator access.
+* "Twitter Bootstrap":http://twitter.github.com/bootstrap/ is a front-end framework for CSS styling.
 
 Best of all, there's a "detailed tutorial":http://railsapps.github.com/tutorial-rails-bootstrap-devise-cancan.html to show how it's built.
 
@@ -67,7 +67,7 @@ If you want to copy and customize the app with changes that are only useful for 
 <pre>
 $ git clone git://github.com/RailsApps/rails3-bootstrap-devise-cancan.git
 </pre>
-  
+
 You'll need "git":http://git-scm.com/ on your machine. See "Rails and Git":http://railsapps.github.com/rails-git.html.
 
 h3. Generate
@@ -102,7 +102,7 @@ question  Install an example application?
 
 Choose *rails3-bootstrap-devise-cancan*. The Rails Composer tool may give you other options (other choices may have been added since these notes were written).
 
-The application generator template will ask you for additional preferences: 
+The application generator template will ask you for additional preferences:
 
 <pre>
  question  Web server for development?
@@ -152,7 +152,7 @@ If you get an error like this:
 Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
     composer  Running 'after bundler' callbacks.
 The template [...] could not be loaded.
-Error: You have already activated ..., but your Gemfile requires .... 
+Error: You have already activated ..., but your Gemfile requires ....
 Using bundle exec may solve this.
 </pre>
 
@@ -303,7 +303,7 @@ You can check that your application runs properly by entering the command:
 
 To see your application in action, open a browser window and navigate to "http://localhost:3000/":http://localhost:3000. You should see the default user listed on the home page. When you click on the user's name, you should be required to log in before seeing the user's detail page.
 
-If you are using the default values from the *config/application.yml* file, you can sign in as the administrator using: 
+If you are using the default values from the *config/application.yml* file, you can sign in as the administrator using:
 
 * email: user@example.com
 * password: please
@@ -327,9 +327,24 @@ h2. Deploy to Heroku
 
 For your convenience, here is a "Tutorial for Rails on Heroku":http://railsapps.github.com/rails-heroku-tutorial.html. Heroku provides low cost, easily configured Rails application hosting.
 
-You may wish to set up SSL before you make your application available in production. See the "Heroku documentation on SSL":https://devcenter.heroku.com/articles/ssl.
+Be sure to set up SSL before you make your application available in production. See the "Heroku documentation on SSL":https://devcenter.heroku.com/articles/ssl.
 
-You'll need to set the configuration values from the *config/application.yml* file as Heroku environment variables. See the article "Rails Environment Variables":http://railsapps.github.com/rails-environment-variables.html for more information. 
+Add this configuration parameter to the *config/application.rb* file:
+
+<pre>
+# Heroku requires this to be false
+config.assets.initialize_on_precompile=false
+</pre>
+
+Then precompile assets, commit to git, and push to Heroku:
+
+<pre>
+$ rake assets:precompile
+$ git add -A
+$ git commit -m "assets compiled for Heroku"
+$ git push heroku master
+
+You'll need to set the configuration values from the *config/application.yml* file as Heroku environment variables. See the article "Rails Environment Variables":http://railsapps.github.com/rails-environment-variables.html for more information.
 
 With the figaro gem, just run:
 
@@ -337,11 +352,26 @@ With the figaro gem, just run:
 rake figaro:heroku
 </pre>
 
-Alternatively, you can set Heroku environment variables like this:
+Alternatively, you can set Heroku environment variables directly.
+
+The figaro gem version 0.5.0 has a bug and can't run @rake figaro:heroku@.
+
+Set environment variables directly on Heroku with @heroku config:add@.
 
 <pre>
-$ heroku config:add GMAIL_USERNAME=Your_Username GMAIL_PASSWORD=Your_Password
+$ heroku config:add GMAIL_USERNAME='myname@gmail.com' GMAIL_PASSWORD='secret'
+$ heroku config:add 'ROLES=[admin, user, VIP]'
+$ heroku config:add ADMIN_NAME='First User' ADMIN_EMAIL='user@example.com' ADMIN_PASSWORD='please'
 </pre>
+
+Complete Heroku deployment with:
+
+<pre>
+$ heroku run rake db:migrate
+$ heroku run rake db:seed
+</pre>
+
+See the "Tutorial for Rails on Heroku":http://railsapps.github.com/rails-heroku-tutorial.html for details.
 
 h2. Customizing
 
