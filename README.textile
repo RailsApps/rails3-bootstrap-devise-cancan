@@ -6,7 +6,7 @@ Rails 3.2 example application shows how to use "Devise":http://github.com/plataf
 * "CanCan":https://github.com/ryanb/cancan provides authorization for administrator access.
 * "Twitter Bootstrap":http://twitter.github.com/bootstrap/ is a front-end framework for CSS styling.
 
-Best of all, there's a "detailed tutorial":http://railsapps.github.com/tutorial-rails-bootstrap-devise-cancan.html to show how it's built.
+Best of all, there's a "detailed tutorial":https://tutorials.railsapps.org/rails3-bootstrap-devise-cancan to show how it's built.
 
 You can build this application in only a few minutes using the "Rails Composer":http://railsapps.github.com/rails-composer/ tool.
 
@@ -20,7 +20,7 @@ h2. Tutorial
 
 A complete tutorial is available:
 
-h4. "View the Tutorial":http://railsapps.github.com/tutorial-rails-bootstrap-devise-cancan.html
+h4. "View the Tutorial":https://tutorials.railsapps.org/rails3-bootstrap-devise-cancan
 
 The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. See a list of recommended resources for "Rails":http://railsapps.github.com/rails.html.
 
@@ -400,7 +400,7 @@ Problems? Check the "issues":http://github.com/RailsApps/rails3-bootstrap-devise
 
 h2. Documentation
 
-The "tutorial":http://railsapps.github.com/tutorial-rails-bootstrap-devise-cancan.html provides additional documentation.
+The "tutorial":https://tutorials.railsapps.org/rails3-bootstrap-devise-cancan provides additional documentation.
 
 For a Devise introduction, Ryan Bates offers a "Railscast on Devise":http://railscasts.com/episodes/209-introducing-devise. You can find documentation for "Devise":http://github.com/plataformatec/devise at "http://github.com/plataformatec/devise":http://github.com/plataformatec/devise. There is an active "Devise mailing list":http://groups.google.com/group/plataformatec-devise and you can submit "Devise issues":http://github.com/plataformatec/devise/issues at GitHub.
 
