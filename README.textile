@@ -91,7 +91,7 @@ You'll see a prompt:
 <pre>
 question  Install an example application?
       1)  I want to build my own application
-      2)  rails-stripe-membership-saas
+      2)  membership/subscription/saas
       3)  rails-prelaunch-signup
       4)  rails3-bootstrap-devise-cancan
       5)  rails3-devise-rspec-cucumber
@@ -190,6 +190,8 @@ $ gem list
 
 Keep in mind that you have installed these gems locally. When you deploy the app to another server, the same gems (and versions) must be available.
 
+I recommend using "rvm":https://rvm.io/, the Ruby Version Manager, to create a project-specific gemset for the application. See the article "Installing Rails":http://railsapps.github.com/installing-rails.html.
+
 h3. Configure Email
 
 This example application doesn't send email messages. However, if you want your application to send email messages (for example, if you plan to install the Devise @:confirmable@ module) you must configure the application for your email account. See the article "Send Email with Rails":http://railsapps.github.com/rails-send-email.html.
@@ -220,7 +222,7 @@ GMAIL_USERNAME: Your_Username
 GMAIL_PASSWORD: Your_Password
 ADMIN_NAME: First User
 ADMIN_EMAIL: user@example.com
-ADMIN_PASSWORD: please
+ADMIN_PASSWORD: changeme
 ROLES: [admin, user, VIP]
 </pre>
 
@@ -259,7 +261,7 @@ The *db/seeds.rb* file reads a list of roles from the *config/application.yml* f
 You may wish to include additional sample users:
 
 <pre>
-user2 = User.find_or_create_by_email :name => 'Second User', :email => 'user2@example.com', :password => 'please', :password_confirmation => 'please'
+user2 = User.find_or_create_by_email :name => 'Second User', :email => 'user2@example.com', :password => 'changeme', :password_confirmation => 'changeme'
 puts 'user: ' << user2.name
 user2.add_role :VIP
 </pre>
@@ -289,7 +291,15 @@ h3. Change your Application's Secret Token
 
 If you've used the Rails Composer tool to generate the application, the application's secret token will be unique, just as with any Rails application generated with the @rails new@ command.
 
-However, if you've cloned the application directly from GitHub, it is crucial that you change the application's secret token before deploying your application in production mode. Otherwise, people could change their session information, and potentially access your SaaS or membership site as a premium user or administrator. Your secret token should be at least 30 characters long and completely random. Edit your *config/initializers/secret_token.rb* file:
+However, if you've cloned the application directly from GitHub, it is crucial that you change the application's secret token before deploying your application in production mode. Otherwise, people could change their session information, and potentially access your SaaS or membership site as a premium user or administrator. Your secret token should be at least 30 characters long and completely random.
+
+Get a unique secret token:
+
+<pre>
+rake secret
+</pre>
+
+Edit your *config/initializers/secret_token.rb* file to add the secret token:
 
 <pre>
 Rails3BootstrapDeviseCancan::Application.config.secret_token = '...some really long, random string...'
@@ -306,7 +316,7 @@ To see your application in action, open a browser window and navigate to "http:/
 If you are using the default values from the *config/application.yml* file, you can sign in as the administrator using:
 
 * email: user@example.com
-* password: please
+* password: changeme
 
 You'll see a navigation link for Admin. Clicking the link will display a page with a list of users at
 "http://localhost:3000/users":http://localhost:3000/users.
@@ -314,7 +324,7 @@ You'll see a navigation link for Admin. Clicking the link will display a page wi
 If you've added a second user, (unless you've changed it) use
 
 * email: user2@example.com
-* password: please
+* password: changeme
 
 The second user will not see the Admin navigation link and will not be able to access the page at
 "http://localhost:3000/users":http://localhost:3000/users.
@@ -361,7 +371,7 @@ Set environment variables directly on Heroku with @heroku config:add@.
 <pre>
 $ heroku config:add GMAIL_USERNAME='myname@gmail.com' GMAIL_PASSWORD='secret'
 $ heroku config:add 'ROLES=[admin, user, VIP]'
-$ heroku config:add ADMIN_NAME='First User' ADMIN_EMAIL='user@example.com' ADMIN_PASSWORD='please'
+$ heroku config:add ADMIN_NAME='First User' ADMIN_EMAIL='user@example.com' ADMIN_PASSWORD='changeme'
 </pre>
 
 Complete Heroku deployment with:
