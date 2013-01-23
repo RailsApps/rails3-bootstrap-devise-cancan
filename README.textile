@@ -353,6 +353,7 @@ $ rake assets:precompile
 $ git add -A
 $ git commit -m "assets compiled for Heroku"
 $ git push heroku master
+</pre>
 
 You'll need to set the configuration values from the *config/application.yml* file as Heroku environment variables. See the article "Rails Environment Variables":http://railsapps.github.com/rails-environment-variables.html for more information.
 
@@ -362,11 +363,7 @@ With the figaro gem, just run:
 rake figaro:heroku
 </pre>
 
-Alternatively, you can set Heroku environment variables directly.
-
-The figaro gem version 0.5.0 has a bug and can't run @rake figaro:heroku@.
-
-Set environment variables directly on Heroku with @heroku config:add@.
+Alternatively, you can set Heroku environment variables directly with @heroku config:add@.
 
 <pre>
 $ heroku config:add GMAIL_USERNAME='myname@gmail.com' GMAIL_PASSWORD='secret'
@@ -398,9 +395,9 @@ The example application contains a suite of RSpec unit tests and Cucumber scenar
 
 After installing the application, run @rake -T@ to check that rake tasks for RSpec and Cucumber are available.
 
-Run @rake spec@ to run all RSpec tests.
+Run @rake spec@ to run RSpec tests.
 
-Run @rake cucumber@ (or more simply, @cucumber@) to run all Cucumber scenarios.
+Run @rake cucumber@ (or more simply, @cucumber@) to run Cucumber scenarios.
 
 Please send the author a message, create an issue, or submit a pull request if you can contribute improved RSpec or Cucumber files.
 
