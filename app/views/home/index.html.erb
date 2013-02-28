@@ -1,4 +1,64 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>
+<h1>Welcome to the Rollbar Demo App</h1>
+
+<p>Errors that happen here get reported back to the <a href="https://rollbar.com/demo" target="_blank">Rollbar Demo Project</a>. Click around here with the demo project open in another window or tab and watch the data appear.</p>
+
+<h3>Server-side (Rails)</h3>
+
+<p><%= link_to 'This link causes a server-side exception', '/cause_server_side_exception' %></p>
+<p><%= link_to 'This link causes a critical exception', '/cause_server_side_exception?level=critical' %></p>
+<p><%= link_to 'This link will 404', '/cause_404' %></p>
+
+<h3>Client-side (Javascript)</h3>
+
+<h4>Uncaught errors</h4>
+
+<p><button class="btn" onclick="nonexistent_function();">Cause an uncaught error</button> (will be reported by window.onerror)</p>
+
+<script>
+  function report_message(level) {
+    var body = $('#js-log-input').prop('value');
+    var data = {
+      an_array: [1,2,3],
+      an_object: {hello: 'world'},
+      a_string: "Hola",
+      a_number: 42
+    }
+    data.msg = body;
+    data.level = level;
+    // you can also just do _rollbar.push("message"); for simple logs at the 'info' level
+    _rollbar.push(data, function(err) { 
+      if (err) {
+        alert("Got an error reporting to Rollbar: ", err);
+      } else {
+        alert("Success. Go check the Rollbar project Items page.");
+      }
+    });
+  }
+</script>
+
+<h4>Log a message</h4>
+<ol>
+<li>Enter message text: <input type="text" value="some log message" id="js-log-input" class="span3">
+<li>Now press one of these buttons:
+<div class="btn-group">
+  <button class="btn" onclick="report_message('debug');">Debug</button>
+  <button class="btn" onclick="report_message('info');">Info</button>
+  <button class="btn" onclick="report_message('warning');">Warning</button>
+  <button class="btn" onclick="report_message('error');">Error</button>
+  <button class="btn" onclick="report_message('critical');">Critical</button>
+</div>
+</li>
+</ol>
+
+<hr>
+
+<p><b>Note:</b> while this demo is just Rails and Javascript, Rollbar also supports Python, PHP, Node.js, Flash, and anything else that can speak JSON and HTTP to our API.</p>
+
+<h4>Credits</h4>
+
+<p>This simple app is based on the <a target="_blank" href="https://github.com/RailsApps/rails3-bootstrap-devise-cancan">rails3-bootstrap-device-cancan</a> tutorial app.</p>
+
+<h4>Source</h4>
+
+<p>Source code of this app is available on Github at <a href="https://github.com/rollbar/rollbar-rails-demo">https://github.com/rollbar/rollbar-rails-demo</a>. Want to see all the changes we made to the tutorial app? <a href="https://github.com/rollbar/rollbar-rails-demo/compare/d8dee452284d2296b7936a44f78c238704699d04...master">Here's the diff.</a></p>
+

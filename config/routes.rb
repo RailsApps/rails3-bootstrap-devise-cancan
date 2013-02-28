@@ -1,6 +1,8 @@
 Rails3BootstrapDeviseCancan::Application.routes.draw do
   get "error/index"
 
+  match 'cause_server_side_exception' => 'home#cause_server_side_exception'
+
   authenticated :user do
     root :to => 'home#index'
   end
