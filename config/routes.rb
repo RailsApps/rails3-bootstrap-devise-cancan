@@ -1,4 +1,6 @@
 Rails3BootstrapDeviseCancan::Application.routes.draw do
+  get "error/index"
+
   authenticated :user do
     root :to => 'home#index'
   end
