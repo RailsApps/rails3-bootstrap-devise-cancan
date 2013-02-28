@@ -24,3 +24,6 @@ gem "better_errors", ">= 0.6.0", :group => :development
 gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
 
 gem 'pg'
+
+gem 'rollbar', '~> 0.8.0'
+
