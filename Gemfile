@@ -22,7 +22,13 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "figaro", ">= 0.5.3"
 gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
 
-gem 'pg'
+group :production, :staging do
+  gem 'pg'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+end
 
 gem 'rollbar', '~> 0.8.0'
 
