@@ -14,8 +14,12 @@ class UsersController < ApplicationController
     authorize! :update, @user, :message => 'Not authorized as an administrator.'
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user], :as => :admin)
+      Rollbar.report_message("User updated.", "info", :user => @user)
+      
       redirect_to users_path, :notice => "User updated."
     else
+      Rollbar.report_message("Unable to update user.", "warning", :user => @user)
+      
       redirect_to users_path, :alert => "Unable to update user."
     end
   end
