@@ -1,0 +1,7 @@
+<h1>Critical Error!</h1>
+
+<% if @uuid %>
+<p>Want to your users to be able to reference this issue when they contact support? Give them this token: <%= @uuid %></p>
+
+<p>This URL leads to this occurrence in Rollbar: <a href="https://rollbar.com/instance/uuid?uuid=<%= @uuid %>">https://rollbar.com/instance/uuid?uuid=<%= @uuid %></a></p>
+<% end %>
