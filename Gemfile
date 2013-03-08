@@ -30,5 +30,5 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-gem 'rollbar', '~> 0.8.0'
+gem 'rollbar', '~> 0.9.2'
 
