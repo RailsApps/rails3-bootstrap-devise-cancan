@@ -3,7 +3,7 @@ Rollbar.configure do |config|
   # feel free to use this access token for testing out api calls and seeing what shows up
   # in the demo.
   # please don't abuse this token. we'll just have to disable it.
-  config.access_token = '3857c788396040679fb5d393c2c2b383'
+  config.access_token = 'fc316ac1f7404dc28af26d5baed1416c'
 
   # By default, Rollbar will try to call the `current_user` controller method
   # to fetch the logged-in user object, and then call that object's `id`,
