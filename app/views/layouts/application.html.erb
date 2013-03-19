@@ -10,7 +10,14 @@
     <%= yield(:head) %>
     
     <script>
-    var _rollbarParams = {"server.environment": "production"};
+    var _rollbarParams = {"server.environment": "production"
+      <% if user_signed_in? %>
+      , person: {
+        id: <%= current_user.id %>,
+        email: "<%= current_user.email %>"
+      }
+      <% end %>
+    };
     _rollbarParams["notifier.snippet_version"] = "2"; var _rollbar=["3cda8fbafbfe4a6599d1954b1f1a246e", _rollbarParams]; var _ratchet=_rollbar;
     (function(w,d){w.onerror=function(e,u,l){_rollbar.push({_t:'uncaught',e:e,u:u,l:l});};var i=function(){var s=d.createElement("script");var 
     f=d.getElementsByTagName("script")[0];s.src="//d37gvrvc0wt4s1.cloudfront.net/js/1/rollbar.min.js";s.async=!0;
