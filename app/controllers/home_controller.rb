@@ -5,6 +5,11 @@ class HomeController < ApplicationController
   def cause_server_side_exception
     uh_oh = this_variable_has_not_been_set 
   end
+
+  def cause_another_exception
+    x = nil
+    x[:foo]
+  end
   
   def cause_critical
     result = Rollbar.report_message("Hull breach!", 'critical', :shield_level => "#{Random.rand(25)} percent")
