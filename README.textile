@@ -47,8 +47,8 @@ h2. Dependencies
 
 Before generating your application, you will need:
 
-* The Ruby language (version 1.9.3)
-* Rails 3.2
+* The Ruby language (version 1.9.3 or 2.0.0)
+* The Rails gem (version 3.2)
 
 See the article "Installing Rails":http://railsapps.github.com/installing-rails.html for advice about updating Rails and your development environment.
 
@@ -120,7 +120,7 @@ The application generator template will ask you for additional preferences:
        2)  Haml
        3)  Slim
    extras  Set a robots.txt file to ban spiders? (y/n)
-   extras  Create a project-specific rvm gemset and .rvmrc? (y/n)
+   extras  Use or create a project-specific rvm gemset? (y/n)
    extras  Create a GitHub repository? (y/n)
 </pre>
 
@@ -138,7 +138,7 @@ h4. Other Choices
 
 Set a robots.txt file to ban spiders if you want to keep your new site out of Google search results.
 
-It is a good idea to use "rvm":https://rvm.io/, the Ruby Version Manager, and create a project-specific rvm gemset and .rvmrc file (not available on Windows). See "Installing Rails":http://railsapps.github.com/installing-rails.html.
+It is a good idea to use "rvm":https://rvm.io/, the Ruby Version Manager, and create a project-specific rvm gemset (not available on Windows). See "Installing Rails":http://railsapps.github.com/installing-rails.html.
 
 If you choose to create a GitHub repository, the generator will prompt you for a GitHub username and password.
 
@@ -440,13 +440,13 @@ h2. MIT License
 
 "MIT License":http://www.opensource.org/licenses/mit-license
 
-Copyright © 2012 Daniel Kehoe
+Copyright © 2012-13 Daniel Kehoe
 
 h2. Useful Links
 
 |_. Getting Started |_. Articles |_. Tutorials |
-| "Rails Tutorial":https://tutorials.railsapps.org/rails-tutorial (recommendations) | "Heroku and Rails":http://railsapps.github.com/rails-heroku-tutorial.html | "Devise with CanCan and Twitter Bootstrap":https://tutorials.railsapps.org/rails3-bootstrap-devise-cancan |
-| "Rails":http://railsapps.github.com/rails.html (resources)| "Twitter Bootstrap and Rails":http://railsapps.github.com/twitter-bootstrap-rails.html | "Rails Membership Site with Stripe":https://tutorials.railsapps.org/rails-stripe-membership-saas |
+| "Rails Tutorial":https://tutorials.railsapps.org/rails-tutorial | "Heroku and Rails":http://railsapps.github.com/rails-heroku-tutorial.html | "Devise with CanCan and Twitter Bootstrap":https://tutorials.railsapps.org/rails3-bootstrap-devise-cancan |
+| "Ruby and Rails":http://railsapps.github.com/ruby-and-rails.html | "Twitter Bootstrap and Rails":http://railsapps.github.com/twitter-bootstrap-rails.html | "Rails Membership Site with Stripe":https://tutorials.railsapps.org/rails-stripe-membership-saas |
 | "Installing Rails":http://railsapps.github.com/installing-rails.html | "JavaScript and Rails":http://railsapps.github.com/rails-javascript-include-external.html | "Rails Subscription Site with Recurly":https://tutorials.railsapps.org/rails-recurly-subscription-saas |
 | "Updating Rails":http://railsapps.github.com/updating-rails.html | "Rails Environment Variables":http://railsapps.github.com/rails-environment-variables.html | "Startup Prelaunch Signup Application":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html |
 | "Rails Composer":http://railsapps.github.com/rails-composer/ | "Git and GitHub with Rails":http://railsapps.github.com/rails-git.html | "Devise with RSpec and Cucumber":http://railsapps.github.com/tutorial-rails-devise-rspec-cucumber.html |
