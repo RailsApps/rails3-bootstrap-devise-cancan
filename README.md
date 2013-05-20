@@ -6,7 +6,7 @@ Errors in this app are tracked and reported to [this demo project in Rollbar](ht
 
 ## Credits
 
-We used the the excellent [rails3-bootstrap-device-cancan](https://github.com/railsapps/rails3-bootstrap-devise-cancan) tutorial by [Daniel Kehoe](https://github.com/DanielKehoe) as a template.
+We used the excellent [rails3-bootstrap-device-cancan](https://github.com/railsapps/rails3-bootstrap-devise-cancan) tutorial by [Daniel Kehoe](https://github.com/DanielKehoe) as a template.
 
 ## License
 
