@@ -18,11 +18,11 @@ Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps. Plea
 
 h2. Tutorial
 
-!http://railsapps.github.io/images/rails-bootstrap-cover-250px.png(Rails Bootstrap)!:https://tutorials.railsapps.org/rails-bootstrap
+!http://railsapps.github.io/images/rails-bootstrap-cover-250px.png(Rails Bootstrap)!:http://railsapps.github.io/rails-bootstrap/
 
 If you'd like a Rails 4.0 tutorial (without Devise or CanCan):
 
-h4. "Rails 4.0 and Bootstrap":https://tutorials.railsapps.org/rails-bootstrap
+h4. "Rails 4.0 and Bootstrap":http://railsapps.github.io/rails-bootstrap/
 
 Or see:
 
