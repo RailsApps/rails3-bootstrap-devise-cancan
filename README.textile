@@ -18,15 +18,19 @@ Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps. Plea
 
 h2. Tutorial
 
+An in-depth tutorial is available (subscription required). Subscriptions provide financial support for the RailsApps project.
+
+You can use the starter app without getting the tutorial. The tutorial provides a detailed explanation of the code:
+
 !http://railsapps.github.io/images/rails-bootstrap-cover-250px.png(Rails Bootstrap)!:http://railsapps.github.io/rails-bootstrap/
 
 If you'd like a Rails 4.0 tutorial (without Devise or CanCan):
 
 h4. "Rails 4.0 and Bootstrap":http://railsapps.github.io/rails-bootstrap/
 
-Or see:
+For Rails 3.2:
 
-h4. "Rails 3.2.13 and Devise with CanCan and Twitter Bootstrap":https://tutorials.railsapps.org/rails3-bootstrap-devise-cancan
+h4. "Rails 3.2 and Devise with CanCan and Twitter Bootstrap":https://tutorials.railsapps.org/rails3-bootstrap-devise-cancan
 
 The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, if you are new to Rails, it is best to start with "Learn Rails":http://learn-rails.com/, the beginners' tutorial.
 
