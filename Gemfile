@@ -30,7 +30,7 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-gem 'rollbar', '~> 0.10.3'
+gem 'rollbar', '~> 0.12.10'
 
 gem 'newrelic_rpm'
 
