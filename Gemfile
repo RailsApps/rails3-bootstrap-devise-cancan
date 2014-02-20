@@ -34,3 +34,5 @@ gem 'rollbar', '~> 0.12.10'
 
 gem 'newrelic_rpm'
 
+gem 'ey_config'
+
