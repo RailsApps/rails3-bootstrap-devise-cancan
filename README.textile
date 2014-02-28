@@ -1,4 +1,14 @@
-h1. !http://railsapps.github.io/images/rails-36x36.jpg(Rails Application for Devise with CanCan and Twitter Bootstrap)! Rails App for Devise with CanCan and Twitter Bootstrap
+h1. !http://railsapps.github.io/images/rails-36x36.jpg(Rails Application for Devise with CanCan and Twitter Bootstrap)! Devise with CanCan and Bootstrap
+
+h2. Rails 4.1
+
+h4. "Devise and Pundit and Rails":https://github.com/RailsApps/rails-devise-pundit
+
+See the example application "Devise and Pundit and Rails":https://github.com/RailsApps/rails-devise-pundit for use with Rails 4.1. The rails3-bootstrap-devise-cancan example application is outdated and has been replaced!
+
+"CanCan":https://github.com/ryanb/cancan is no longer maintained. Instead, use "Pundit":https://github.com/elabs/pundit for authorization.
+
+h2. Rails 3.2
 
 Rails 3.2 example application shows how to use "Devise":https://github.com/plataformatec/devise with "CanCan":https://github.com/ryanb/cancan and "Twitter Bootstrap":http://twitter.github.com/bootstrap/.
 
