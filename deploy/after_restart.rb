@@ -1,6 +1,4 @@
-require 'rubygems'
 require 'net/http'
-require 'json'
 require 'uri'
 
 uri = URI.parse('https://api.rollbar.com/api/1/deploy/')
