@@ -1,65 +1,40 @@
-h1. !http://railsapps.github.io/images/rails-36x36.jpg(Rails Application for Devise with CanCan and Twitter Bootstrap)! Devise with CanCan and Bootstrap
+h1. !http://railsapps.github.io/images/rails-36x36.jpg(Rails Application for Devise with RSpec and Cucumber)! Rails 4.1
 
-h2. Rails 4.1
+For a Rails 4.1 example application for Devise with authorization, plus Bootstrap, see:
 
-h4. "Devise and Pundit and Rails":https://github.com/RailsApps/rails-devise-pundit
+* "rails-devise-pundit":https://github.com/RailsApps/rails-devise-pundit
 
-See the example application "Devise and Pundit and Rails":https://github.com/RailsApps/rails-devise-pundit for use with Rails 4.1. The rails3-bootstrap-devise-cancan example application is outdated and has been replaced!
+Tutorials are available for Devise:
 
-h2. Rails 3.2
+* "Rails Devise Tutorial":http://railsapps.github.io/rails-devise/
 
-Rails 3.2 example application shows how to use "Devise":https://github.com/plataformatec/devise with "CanCan":https://github.com/ryanb/cancan and "Twitter Bootstrap":http://twitter.github.com/bootstrap/.
+h4. Similar Examples and Tutorials
+
+This is one in a series of Rails example apps and tutorials from the "RailsApps Project":http://railsapps.github.io/. See a list of additional "Rails examples, tutorials, and starter apps":http://railsapps.github.io/rails-examples-tutorials.html. Related example applications may be useful:
+
+* "Learn Rails":https://github.com/RailsApps/learn-rails companion to the book "Learn Ruby on Rails":http://learn-rails.com/learn-ruby-on-rails.html
+* "Foundation and Rails":http://railsapps.github.io/rails-foundation/ shows how to integrate Foundation
+* "Bootstrap and Rails":http://railsapps.github.io/rails-bootstrap/ shows to integrate Bootstrap
+* "OmniAuth and Rails":https://github.com/RailsApps/rails-omniauth uses OmniAuth for authentication
+* "Devise and Rails":https://github.com/RailsApps/rails-devise uses Devise for authentication
+
+h1. !http://railsapps.github.io/images/rails-36x36.jpg(Rails Application for Devise with RSpec and Cucumber)! Rails 3.2
+
+This rails3-bootstrap-devise-cancan example application is outdated and has been replaced! For a Rails 4.1 example application for Devise with authorization, see "rails-devise-pundit":https://github.com/RailsApps/rails-devise-pundit.
+
+This Rails 3.2 example application shows how to use "Devise":https://github.com/plataformatec/devise with "CanCan":https://github.com/ryanb/cancan and "Twitter Bootstrap":http://twitter.github.com/bootstrap/.
 
 * "Devise":https://github.com/plataformatec/devise gives you ready-made authentication and user management.
 * "CanCan":https://github.com/ryanb/cancan provides authorization for administrator access.
 * "Twitter Bootstrap":http://twitter.github.com/bootstrap/ is a front-end framework for CSS styling.
 
-Best of all, there's a "detailed tutorial":https://tutorials.railsapps.org/rails3-bootstrap-devise-cancan to show how it's built.
-
-You can build this application in only a few minutes using the "Rails Composer":http://railsapps.github.io/rails-composer/ tool.
-
 !http://railsapps.github.io/images/rails3-bootstrap-devise-cancan.png(Rails Application for Devise with CanCan and Twitter Bootstrap)!
-
-h2. !http://twitter-badges.s3.amazonaws.com/t_logo-a.png(Follow on Twitter)!:http://www.twitter.com/rails_apps Follow on Twitter
-
-Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps. Please tweet some praise if you like what you've found.
-
-h2. Tutorial
-
-An in-depth tutorial is available (subscription required). Subscriptions provide financial support for the RailsApps project.
-
-You can use the starter app without getting the tutorial. The tutorial provides a detailed explanation of the code:
-
-!http://railsapps.github.io/images/rails-bootstrap-cover-250px.png(Rails Bootstrap)!:http://railsapps.github.io/rails-bootstrap/
-
-If you'd like a Rails 4.0 tutorial (without Devise or CanCan):
-
-h4. "Rails 4.0 and Bootstrap":http://railsapps.github.io/rails-bootstrap/
-
-For Rails 3.2:
-
-h4. "Rails 3.2 and Devise with CanCan and Twitter Bootstrap":https://tutorials.railsapps.org/rails3-bootstrap-devise-cancan
-
-The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, if you are new to Rails, it is best to start with "Learn Rails":http://learn-rails.com/, the beginners' tutorial.
 
 h2. What Is Implemented -- and What Is Not
 
 This is a demonstration application that allows you to visit a home page and see a list of users. Devise provides user management so a visitor can register with an email address and password and create an account. Devise provides authentication so access to the site can be limited to users who are registered and logged in. CanCan is used for authorization, limiting access to only an administrator for designated pages. An administrative dashboard allows the administrator to delete any user or change a user's role.
 
 The @rake db:seed@ command sets up a database with an administrator who can view a administrative page when logged in. Additional users can be added; each is restricted from accessing the administrative page.
-
-h2. Similar Examples and Tutorials
-
-This is one in a series of Rails example apps and tutorials from the "RailsApps Project":http://railsapps.github.io/. See a list of additional "Rails examples, tutorials, and starter apps":http://railsapps.github.io/rails-examples-tutorials.html.
-
-This example application is based on the "rails3-devise-rspec-cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber example and tutorial and adds "CanCan":https://github.com/ryanb/cancan and "Twitter Bootstrap":http://twitter.github.com/bootstrap/. View the "rails3-devise-rspec-cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber example and tutorial for the basics of setting up an application with "RSpec":http://rspec.info/ and "Cucumber":http://cukes.info/.
-
-This example application uses ActiveRecord and a SQLite database. You can use the Mongoid ORM with the MongoDB datastore instead, for faster development without schemas or migrations. The "rails3-mongoid-devise":https://github.com/RailsApps/rails3-mongoid-devise example app and tutorial shows how to set up Devise and Mongoid with RSpec and Cucumber.
-
-For more complex applications that use Devise, CanCan, and Twitter Bootstrap, see:
-
-* "rails-stripe-membership-saas":http://railsapps.github.io/rails-stripe-membership-saas example and tutorial
-* "rails-prelaunch-signup":https://github.com/RailsApps/rails-prelaunch-signup example and tutorial
 
 h2. Dependencies
 
@@ -95,7 +70,7 @@ If you want to use the project as a starter app, use the "Rails Composer":http:/
 To build the example application, run the command:
 
 <pre>
-$ rails new rails3-bootstrap-devise-cancan -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T
+$ rails new rails3-bootstrap-devise-cancan -m https://raw.github.com/RailsApps/rails-composer/master/composer-Rails3_2.rb -T
 </pre>
 
 Use the @-T@ flag to skip Test::Unit files.
