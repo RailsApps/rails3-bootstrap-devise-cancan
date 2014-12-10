@@ -24,16 +24,14 @@
       a_string: "Hola",
       a_number: 42
     }
-    data.msg = body;
-    data.level = level;
-    // you can also just do _rollbar.push("message"); for simple logs at the 'info' level
-    _rollbar.push(data, function(err) { 
+
+    Rollbar.scope({level: level}).log(body, data, function(err) {
       if (err) {
         alert("Got an error reporting to Rollbar: ", err);
       } else {
         alert("Success. Go check the Rollbar project Items page.");
       }
-    });
+    })
   }
 </script>
 
