@@ -25,7 +25,7 @@
       a_number: 42
     }
 
-    Rollbar[level](body, data, function(err) {
+    Rollbar.scope({level: level}).log(body, data, function(err) {
       if (err) {
         alert("Got an error reporting to Rollbar: ", err);
       } else {
