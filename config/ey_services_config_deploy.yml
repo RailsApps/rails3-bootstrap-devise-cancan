@@ -173,3 +173,5 @@ environments:
   #EXAMPLE_ENVIRONMENT:
     #precompile_unchanged_assets: true
 
+rollbar:
+  ROLLBAR_ACCESS_TOKEN: fc316ac1f7404dc28af26d5baed1416c
